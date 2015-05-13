@@ -30,7 +30,7 @@ Sublime3 configurations (user settings) and recommended addons for drupal develo
 <h4>SublimeLinter and Code Sniffer</h4>
 <p>Install PHP_Codesniffer and drupalcs</p>
 <ul>
-  <li>Install PHP Code Sniffer <br/>```pear install PHP_CodeSniffer```</li>
+  <li>Install PHP Code Sniffer <pre><code>pear install PHP_CodeSniffer</code></pre></li>
   <li>Download coder module from https://www.drupal.org/project/coder - use 8.x branch since 7.x seems broken (8.x branch can be also used for validating D7 code) and copy or link the coder/coder_sniffer/Drupal folder to to your PHP CodeSniffer Standards folder (e.g. /usr/share/php/PHP/CodeSniffer/Standards)</li>
   <li>Configure sublimelinter prefs by updating Preferences/Package Settings/Sublime Linter/Settings - User<br/>
 <pre><code>
