@@ -1,0 +1,16 @@
+{
+    "default": {
+
+        "paths": {
+            "linux": ["/usr/bin/php"],
+        },
+
+        "syntax_map": {
+            "php": "php"
+        },
+
+        "sublimelinter_popup_errors_on_save": true,
+        "sublimelinter_fill_outlines": true,
+        "sublimelinter_gutter_marks": true
+    }
+}
