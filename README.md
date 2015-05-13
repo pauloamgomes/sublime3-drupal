@@ -22,5 +22,38 @@ Sublime3 configurations (user settings) and recommended addons for drupal develo
   <li>Drupal</li>
   <li>Drupal Completions</li>
   <li>Drupal Project Autocomplete</li>
+  <li>AdvancedNewFile</li>
+  <li>SublimeLinter</li>
+  <li>SublimeLinter phplint</li>
 </ul>
 
+<h4>SublimeLinter and Code Sniffer</h4>
+<p>Install PHP_Codesniffer and drupalcs</p>
+<ul>
+  <li>Install PHP Code Sniffer <br/><code>pear install PHP_CodeSniffer</code></li>
+  <li>Download coder module from https://www.drupal.org/project/coder - use 8.x branch since 7.x seems broken (8.x branch can be also used for validating D7 code) and copy or link the coder/coder_sniffer/Drupal folder to to your PHP CodeSniffer Standards folder (e.g. /usr/share/php/PHP/CodeSniffer/Standards)</li>
+  <li>Configure sublimelinter prefs by updating Preferences/Package Settings/Sublime Linter/Settings - User<br/>
+  <code>
+    "paths": {
+        "linux": ["/usr/bin/php"],
+        "osx": [],
+        "windows": []
+    },
+    "syntax_map": {
+        "php": "php"
+    },
+    "sublimelinter_popup_errors_on_save": true,
+    "sublimelinter_fill_outlines": true,
+    "sublimelinter_gutter_marks": true
+  </code>
+  </li>
+  <li>Create a new Build System in Tools/Build System/New Build System... with the following code:<br/>
+  <code>
+  {
+    "cmd": ["phpcs", "--report=emacs", "--standard=Drupal","--extensions=php,module,inc,install,test,profile,theme", "$file"],
+    "file_regex": "^(.*):(.*):(.*):(.*)$"
+  }
+  </code>
+  and save the file on your User Package folder with the name Drupal.sublime-build
+  </li>
+</ul>
